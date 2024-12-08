@@ -1,0 +1,24 @@
+name: npm ci
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              name: Checkout
+            - uses: actions/setup-node@v3
+              name: Setup Node
+              with:
+                  node-version: 18
+            - run: npm ci
+              name: Install dependencies
+            - name: npm test
+              run: npm test  
