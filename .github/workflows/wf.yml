@@ -1,13 +1,11 @@
 name: npm ci
 
 on:
-    # push:
-    #     branches:
-    #         - main
-    # pull_request:
-    #     branches:
-    #         - main
-    workflow_dispatch:
+    push:
+        branches:
+            - main
+            - feat-*
+
 
 jobs:
     build:
@@ -15,28 +13,3 @@ jobs:
         steps:
             - uses: actions/checkout@v3
               name: Checkout
-            - uses: actions/setup-node@v3
-              name: Setup Node
-              with:
-                  node-version: 18
-            - run: npm ci
-              name: Install dependencies
-            - name: npm test
-              run: npm test  
-    deploy:
-        needs: [build]
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-              name: Checkout
-            - uses: actions/setup-node@v3
-              name: Setup Node
-              with:
-                  node-version: 18
-            - run: npm ci
-              name: Install dependencies
-            - name: npm build
-              run: npm run build
-            - name: Deploy
-              run: echo "Deploying..."
-# some change
