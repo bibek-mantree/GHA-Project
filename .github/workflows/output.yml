@@ -8,6 +8,6 @@ jobs:
         steps:
             - name: Output
               run: |
-                  echo The full context is ${{ toJson(github) }}
+                  echo "The full context is ${{ toJson(github) }}"
                   echo "The job was automatically triggered by a ${{ github.event_name }} event."
                   echo "The name of the branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
