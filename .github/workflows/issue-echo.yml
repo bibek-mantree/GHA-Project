@@ -8,4 +8,4 @@ jobs:
     new-issue:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "Hello, ${{ github.event.issue.title }}!"
+            - run: echo "Hello new issue, ${{ github.event.issue.title }}!"
