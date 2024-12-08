@@ -5,7 +5,7 @@ on:
         types: [opened]
 
 jobs:
-    echo:
+    new-issue:
         runs-on: ubuntu-latest
         steps:
             - run: echo "Hello, ${{ github.event.issue.title }}!"
