@@ -3,7 +3,6 @@ name: npm ci
 on:
     push:
         branches:
-            - main
             - feat-*
 
 
