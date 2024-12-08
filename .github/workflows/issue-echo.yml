@@ -1,0 +1,11 @@
+name: Echo issue
+
+on:
+    issues:
+        types: [opened]
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Hello, ${{ github.event.issue.title }}!"
